@@ -42,12 +42,14 @@ public class Biblioteca {
 
     public int removerPorTitulo(String titulo) {
         int livrosRemovidos = 0;
+        List<Livro> listLivroParaRemover = new ArrayList<Livro>();
         for (Livro livro : acervo) {
             if (livro.getTitulo().toLowerCase().contains(titulo.toLowerCase().trim())) {
-                acervo.remove(livro);
+                listLivroParaRemover.add(livro);
                 livrosRemovidos++;
             }
         }
+        acervo.removeAll(listLivroParaRemover);
         return livrosRemovidos;
     }
 

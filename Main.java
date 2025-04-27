@@ -7,6 +7,7 @@ public class Main {
     public static void main(String[] args) {
         limparTela();
         String menu = """
+
                 ====== SYSBIBLIO ======
                 Escolha uma das opções abaixo:
                 1 - Adicionar novo livro
@@ -143,8 +144,9 @@ public class Main {
     }
 
     private static void pesquisarPorTitulo(Scanner lerTeclado) {
-        System.out.println("Digite a palavra-chave para pesquisar livros:");
+        System.out.println("Digite a palavra-chave para pesquisar livros por titulo:");
         String titulo = lerTeclado.nextLine();
+        limparTela();
 
         try {
             List<Livro> livrosPesquisados = biblio.pesquisarPorTitulo(titulo);
@@ -161,12 +163,13 @@ public class Main {
 
     private static void buscarLivroAleatorio() {
         Livro livroAleatorio = biblio.buscarLivroAleatorio();
-        System.out.printf("Livro sorteado: %s", livroAleatorio.toString());
+        System.out.println("Livro sorteado: " + livroAleatorio.toString());
     }
 
     private static void pesquisarPorAutor(Scanner lerTeclado) {
-        System.out.println("Digite a palavra-chave para pesquisar livros:");
+        System.out.println("Digite a palavra-chave para pesquisar livros por autor:");
         String autor = lerTeclado.nextLine();
+        limparTela();
 
         try {
             List<Livro> livrosPesquisados = biblio.pesquisarPorAutor(autor);
